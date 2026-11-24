@@ -1,0 +1,45 @@
+# 청월령: main 에 올릴(Push) 때마다 웹용으로 내보내 GitHub Pages 에 자동으로 올린다.
+name: 웹 게임 업데이트
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: 4.7.2
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/godot-cache
+          key: godot-${{ env.GODOT_VERSION }}-web-v1
+      - name: 웹으로 내보내기
+        run: bash web_build/build_web.sh "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/_site" "$HOME/godot-cache"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
