@@ -1,0 +1,1167 @@
+[gd_scene load_steps=28 format=3]
+
+[ext_resource type="Script" path="res://scripts/area_view.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/area_layer.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/scenery/ridge_1.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/scenery/haze.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/scenery/forest_2.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/scenery/ground_dark.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/scenery/deadtree_0.png" id="7"]
+[ext_resource type="Material" path="res://assets/scenery/sway_tree.tres" id="8"]
+[ext_resource type="Texture2D" path="res://assets/scenery/deadtree_1.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/scenery/deadtree_2.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/scenery/shadow.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/scenery/gate_saejae.png" id="12"]
+[ext_resource type="Texture2D" path="res://assets/scenery/tree_b_3.png" id="13"]
+[ext_resource type="Texture2D" path="res://assets/scenery/tree_b_0.png" id="14"]
+[ext_resource type="Texture2D" path="res://assets/scenery/tree_a_0.png" id="15"]
+[ext_resource type="Texture2D" path="res://assets/scenery/rock_moss_0.png" id="16"]
+[ext_resource type="Texture2D" path="res://assets/scenery/tree_a_3.png" id="17"]
+[ext_resource type="Texture2D" path="res://assets/scenery/reed_1.png" id="18"]
+[ext_resource type="Texture2D" path="res://assets/scenery/rock_s_2.png" id="19"]
+[ext_resource type="Texture2D" path="res://assets/scenery/grass_2.png" id="20"]
+[ext_resource type="Material" path="res://assets/scenery/sway_grass.tres" id="21"]
+[ext_resource type="Texture2D" path="res://assets/scenery/stones_3.png" id="22"]
+[ext_resource type="Texture2D" path="res://assets/scenery/reed_2.png" id="23"]
+[ext_resource type="Texture2D" path="res://assets/scenery/hang_1.png" id="24"]
+[ext_resource type="Material" path="res://assets/scenery/sway_hang.tres" id="25"]
+[ext_resource type="Texture2D" path="res://assets/scenery/hang_2.png" id="26"]
+[ext_resource type="Texture2D" path="res://assets/scenery/hang_3.png" id="27"]
+
+[node name="road7" type="Node2D"]
+script = ExtResource("1")
+area_id = "road7"
+leaves = false
+fireflies = false
+embers = true
+
+[node name="먼배경_1" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 0.08
+z_index = -68
+
+[node name="먼능선" type="Sprite2D" parent="먼배경_1"]
+modulate = Color(0.5, 0.5, 0.62, 1)
+texture_repeat = 2
+position = Vector2(-278.2, 283.9)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8662, 487)
+
+[node name="먼배경_2" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 0.1
+z_index = -67
+
+[node name="haze" type="Sprite2D" parent="먼배경_2"]
+modulate = Color(0.36, 0.34, 0.46, 0.8)
+texture_repeat = 2
+position = Vector2(-201.7, 358.0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 5248, 244)
+
+[node name="먼배경_3" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 0.33
+z_index = -60
+
+[node name="중간숲띠" type="Sprite2D" parent="먼배경_3"]
+modulate = Color(0.62, 0.6, 0.7, 1)
+texture_repeat = 2
+position = Vector2(-522.4, 413.1)
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 10901, 295)
+
+[node name="먼배경_4" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 0.5
+z_index = -58
+
+[node name="중간숲띠" type="Sprite2D" parent="먼배경_4"]
+modulate = Color(0.5, 0.48, 0.58, 1)
+texture_repeat = 2
+position = Vector2(-688.5, 445.2)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 14934, 295)
+
+[node name="먼배경_5" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 0.45
+z_index = -55
+
+[node name="haze" type="Sprite2D" parent="먼배경_5"]
+modulate = Color(0.36, 0.34, 0.46, 0.55)
+texture_repeat = 2
+position = Vector2(-223.7, 397.4)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("4")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 7886, 244)
+
+[node name="땅" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 1.0
+z_index = -45
+
+[node name="땅_아래" type="Sprite2D" parent="땅"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-400, 703)
+scale = Vector2(2, 2)
+texture = ExtResource("6")
+flip_v = true
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 4600, 96)
+
+[node name="땅_타일" type="Sprite2D" parent="땅"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-400, 517)
+scale = Vector2(2, 2)
+texture = ExtResource("6")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 4600, 96)
+
+[node name="먼나무" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 0.7
+z_index = -50
+
+[node name="마른나무_1" type="Sprite2D" parent="먼나무"]
+position = Vector2(41, 566)
+scale = Vector2(0.315, 0.315)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_2" type="Sprite2D" parent="먼나무"]
+position = Vector2(241, 566)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_3" type="Sprite2D" parent="먼나무"]
+position = Vector2(435, 566)
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_4" type="Sprite2D" parent="먼나무"]
+position = Vector2(733, 566)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_5" type="Sprite2D" parent="먼나무"]
+position = Vector2(895, 566)
+scale = Vector2(0.325, 0.325)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_6" type="Sprite2D" parent="먼나무"]
+position = Vector2(1085, 566)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_7" type="Sprite2D" parent="먼나무"]
+position = Vector2(1327, 566)
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_8" type="Sprite2D" parent="먼나무"]
+position = Vector2(1461, 566)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_9" type="Sprite2D" parent="먼나무"]
+position = Vector2(1802, 566)
+scale = Vector2(0.325, 0.325)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_10" type="Sprite2D" parent="먼나무"]
+position = Vector2(1961, 566)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_11" type="Sprite2D" parent="먼나무"]
+position = Vector2(2189, 566)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_12" type="Sprite2D" parent="먼나무"]
+position = Vector2(2377, 566)
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_13" type="Sprite2D" parent="먼나무"]
+position = Vector2(2696, 566)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_14" type="Sprite2D" parent="먼나무"]
+position = Vector2(2843, 566)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_15" type="Sprite2D" parent="먼나무"]
+position = Vector2(3132, 566)
+scale = Vector2(0.365, 0.365)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_16" type="Sprite2D" parent="먼나무"]
+position = Vector2(3317, 566)
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_17" type="Sprite2D" parent="먼나무"]
+position = Vector2(3539, 566)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_18" type="Sprite2D" parent="먼나무"]
+position = Vector2(3734, 566)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_19" type="Sprite2D" parent="먼나무"]
+position = Vector2(3963, 566)
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_20" type="Sprite2D" parent="먼나무"]
+position = Vector2(4213, 566)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_21" type="Sprite2D" parent="먼나무"]
+position = Vector2(4454, 566)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_22" type="Sprite2D" parent="먼나무"]
+position = Vector2(4700, 566)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_23" type="Sprite2D" parent="먼나무"]
+position = Vector2(4839, 566)
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_24" type="Sprite2D" parent="먼나무"]
+position = Vector2(5125, 566)
+scale = Vector2(0.335, 0.335)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_25" type="Sprite2D" parent="먼나무"]
+position = Vector2(5325, 566)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_26" type="Sprite2D" parent="먼나무"]
+position = Vector2(5543, 566)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_27" type="Sprite2D" parent="먼나무"]
+position = Vector2(5717, 566)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_28" type="Sprite2D" parent="먼나무"]
+position = Vector2(5952, 566)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_29" type="Sprite2D" parent="먼나무"]
+position = Vector2(6176, 566)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+flip_h = true
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="마른나무_30" type="Sprite2D" parent="먼나무"]
+position = Vector2(6410, 566)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+modulate = Color(0.5, 0.48, 0.58, 1)
+material = ExtResource("8")
+
+[node name="인물뒤" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 1.0
+z_index = -20
+
+[node name="마른나무_31_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(233, 551)
+scale = Vector2(1.069, 0.567)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="마른나무_31" type="Sprite2D" parent="인물뒤"]
+position = Vector2(233, 548)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+flip_h = true
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="마른나무_32_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(585, 551)
+scale = Vector2(1.101, 0.574)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="마른나무_32" type="Sprite2D" parent="인물뒤"]
+position = Vector2(585, 548)
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="새재관문_1_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(700, 557)
+scale = Vector2(2.222, 0.801)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="새재관문_1" type="Sprite2D" parent="인물뒤"]
+position = Vector2(700, 554)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12")
+centered = false
+offset = Vector2(-632, -784)
+
+[node name="나무_1_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(836, 551)
+scale = Vector2(0.722, 0.497)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_1" type="Sprite2D" parent="인물뒤"]
+position = Vector2(836, 548)
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("13")
+centered = false
+offset = Vector2(-210, -700)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="나무_2_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(940, 551)
+scale = Vector2(0.759, 0.504)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_2" type="Sprite2D" parent="인물뒤"]
+position = Vector2(940, 548)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14")
+centered = false
+offset = Vector2(-216, -742)
+modulate = Color(0.7, 0.72, 0.8, 1)
+material = ExtResource("8")
+
+[node name="나무_3_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1100, 551)
+scale = Vector2(0.682, 0.489)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_3" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1100, 548)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15")
+centered = false
+offset = Vector2(-194, -675)
+modulate = Color(0.7, 0.72, 0.8, 1)
+material = ExtResource("8")
+
+[node name="이끼바위_1_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1129, 555)
+scale = Vector2(0.586, 0.469)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="이끼바위_1" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1129, 552)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("16")
+centered = false
+offset = Vector2(-153, -236)
+flip_h = true
+
+[node name="나무_4_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1260, 551)
+scale = Vector2(0.759, 0.504)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_4" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1260, 548)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14")
+centered = false
+offset = Vector2(-216, -742)
+modulate = Color(0.7, 0.72, 0.8, 1)
+material = ExtResource("8")
+
+[node name="이끼바위_2_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1264, 555)
+scale = Vector2(0.586, 0.469)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="이끼바위_2" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1264, 552)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("16")
+centered = false
+offset = Vector2(-153, -236)
+
+[node name="나무_5_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1562, 551)
+scale = Vector2(0.657, 0.484)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_5" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1562, 548)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("17")
+centered = false
+offset = Vector2(-182, -633)
+flip_h = true
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="마른나무_33_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1895, 551)
+scale = Vector2(1.684, 0.692)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="마른나무_33" type="Sprite2D" parent="인물뒤"]
+position = Vector2(1895, 548)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="마른나무_34_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(2256, 551)
+scale = Vector2(1.058, 0.565)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="마른나무_34" type="Sprite2D" parent="인물뒤"]
+position = Vector2(2256, 548)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="이끼바위_3_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(2548, 555)
+scale = Vector2(0.549, 0.461)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="이끼바위_3" type="Sprite2D" parent="인물뒤"]
+position = Vector2(2548, 552)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("16")
+centered = false
+offset = Vector2(-153, -236)
+
+[node name="마른나무_35_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(2823, 551)
+scale = Vector2(1.152, 0.584)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="마른나무_35" type="Sprite2D" parent="인물뒤"]
+position = Vector2(2823, 548)
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="갈대_1" type="Sprite2D" parent="인물뒤"]
+position = Vector2(3083, 552)
+scale = Vector2(0.445, 0.445)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+flip_h = true
+
+[node name="나무_6_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(3522, 551)
+scale = Vector2(0.633, 0.479)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_6" type="Sprite2D" parent="인물뒤"]
+position = Vector2(3522, 548)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("13")
+centered = false
+offset = Vector2(-210, -700)
+flip_h = true
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="나무_7_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(3964, 551)
+scale = Vector2(0.685, 0.489)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_7" type="Sprite2D" parent="인물뒤"]
+position = Vector2(3964, 548)
+scale = Vector2(0.465, 0.465)
+texture = ExtResource("13")
+centered = false
+offset = Vector2(-210, -700)
+flip_h = true
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="나무_8_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(4406, 551)
+scale = Vector2(0.676, 0.487)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_8" type="Sprite2D" parent="인물뒤"]
+position = Vector2(4406, 548)
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("17")
+centered = false
+offset = Vector2(-182, -633)
+flip_h = true
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="마른나무_36_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(4898, 551)
+scale = Vector2(1.139, 0.581)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="마른나무_36" type="Sprite2D" parent="인물뒤"]
+position = Vector2(4898, 548)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("10")
+centered = false
+offset = Vector2(-360, -650)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="이끼바위_4_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5121, 555)
+scale = Vector2(0.565, 0.465)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="이끼바위_4" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5121, 552)
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("16")
+centered = false
+offset = Vector2(-153, -236)
+flip_h = true
+
+[node name="나무_9_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5313, 551)
+scale = Vector2(0.722, 0.497)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_9" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5313, 548)
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("13")
+centered = false
+offset = Vector2(-210, -700)
+flip_h = true
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="나무_10_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5593, 551)
+scale = Vector2(0.729, 0.498)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_10" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5593, 548)
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("13")
+centered = false
+offset = Vector2(-210, -700)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="마른나무_37_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5878, 551)
+scale = Vector2(0.995, 0.552)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="마른나무_37" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5878, 548)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-301, -751)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="woman_tree_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5920, 551)
+scale = Vector2(1.816, 0.719)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="woman_tree" type="Sprite2D" parent="인물뒤"]
+position = Vector2(5920, 548)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+material = ExtResource("8")
+metadata/key = "woman_tree"
+
+[node name="갈대_2" type="Sprite2D" parent="인물뒤"]
+position = Vector2(6323, 552)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+flip_h = true
+
+[node name="마른나무_39_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(6615, 551)
+scale = Vector2(1.750, 0.705)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="마른나무_39" type="Sprite2D" parent="인물뒤"]
+position = Vector2(6615, 548)
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+flip_h = true
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="작은바위_1_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(6939, 555)
+scale = Vector2(0.365, 0.424)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="작은바위_1" type="Sprite2D" parent="인물뒤"]
+position = Vector2(6939, 552)
+scale = Vector2(0.465, 0.465)
+texture = ExtResource("19")
+centered = false
+offset = Vector2(-112, -147)
+flip_h = true
+
+[node name="나무_11_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(7359, 551)
+scale = Vector2(0.641, 0.480)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_11" type="Sprite2D" parent="인물뒤"]
+position = Vector2(7359, 548)
+scale = Vector2(0.435, 0.435)
+texture = ExtResource("13")
+centered = false
+offset = Vector2(-210, -700)
+flip_h = true
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="마른나무_40_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(7769, 551)
+scale = Vector2(1.799, 0.716)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="마른나무_40" type="Sprite2D" parent="인물뒤"]
+position = Vector2(7769, 548)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-470, -716)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="나무_12_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(8181, 551)
+scale = Vector2(0.766, 0.506)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="나무_12" type="Sprite2D" parent="인물뒤"]
+position = Vector2(8181, 548)
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("13")
+centered = false
+offset = Vector2(-210, -700)
+modulate = Color(0.8, 0.78, 0.86, 1)
+material = ExtResource("8")
+
+[node name="이끼바위_5_그림자" type="Sprite2D" parent="인물뒤"]
+position = Vector2(8427, 555)
+scale = Vector2(0.527, 0.457)
+texture = ExtResource("11")
+z_index = -1
+
+[node name="이끼바위_5" type="Sprite2D" parent="인물뒤"]
+position = Vector2(8427, 552)
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("16")
+centered = false
+offset = Vector2(-153, -236)
+
+[node name="맨앞풀" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 1.25
+z_index = 50
+
+[node name="풀_1" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(-8, 772)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("20")
+centered = false
+offset = Vector2(-76, -119)
+flip_h = true
+material = ExtResource("21")
+
+[node name="풀_2" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(409, 772)
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("20")
+centered = false
+offset = Vector2(-76, -119)
+flip_h = true
+material = ExtResource("21")
+
+[node name="풀_3" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(1156, 772)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("20")
+centered = false
+offset = Vector2(-76, -119)
+material = ExtResource("21")
+
+[node name="길가돌_1" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(1426, 772)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("22")
+centered = false
+offset = Vector2(-102, -67)
+flip_h = true
+material = ExtResource("21")
+
+[node name="풀_4" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(2283, 772)
+scale = Vector2(0.615, 0.615)
+texture = ExtResource("20")
+centered = false
+offset = Vector2(-76, -119)
+material = ExtResource("21")
+
+[node name="풀_5" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(2788, 772)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("20")
+centered = false
+offset = Vector2(-76, -119)
+flip_h = true
+material = ExtResource("21")
+
+[node name="갈대_3" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(3179, 772)
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+material = ExtResource("21")
+
+[node name="길가돌_2" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(3814, 772)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("22")
+centered = false
+offset = Vector2(-102, -67)
+material = ExtResource("21")
+
+[node name="길가돌_3" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(4347, 772)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("22")
+centered = false
+offset = Vector2(-102, -67)
+flip_h = true
+material = ExtResource("21")
+
+[node name="길가돌_4" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(4622, 772)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("22")
+centered = false
+offset = Vector2(-102, -67)
+material = ExtResource("21")
+
+[node name="갈대_4" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(5227, 772)
+scale = Vector2(0.675, 0.675)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+material = ExtResource("21")
+
+[node name="갈대_5" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(5829, 772)
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+flip_h = true
+material = ExtResource("21")
+
+[node name="길가돌_5" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(6099, 772)
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("22")
+centered = false
+offset = Vector2(-102, -67)
+flip_h = true
+material = ExtResource("21")
+
+[node name="갈대_6" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(6610, 772)
+scale = Vector2(0.715, 0.715)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+material = ExtResource("21")
+
+[node name="갈대_7" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(7219, 772)
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+material = ExtResource("21")
+
+[node name="갈대_8" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(7598, 772)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("23")
+centered = false
+offset = Vector2(-108, -218)
+material = ExtResource("21")
+
+[node name="갈대_9" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(8355, 772)
+scale = Vector2(0.695, 0.695)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+material = ExtResource("21")
+
+[node name="갈대_10" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(8795, 772)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+flip_h = true
+material = ExtResource("21")
+
+[node name="갈대_11" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(9274, 772)
+scale = Vector2(0.665, 0.665)
+texture = ExtResource("23")
+centered = false
+offset = Vector2(-108, -218)
+flip_h = true
+material = ExtResource("21")
+
+[node name="풀_6" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(9786, 772)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("20")
+centered = false
+offset = Vector2(-76, -119)
+flip_h = true
+material = ExtResource("21")
+
+[node name="갈대_12" type="Sprite2D" parent="맨앞풀"]
+position = Vector2(10581, 772)
+scale = Vector2(0.71, 0.71)
+texture = ExtResource("18")
+centered = false
+offset = Vector2(-118, -176)
+material = ExtResource("21")
+
+[node name="늘어진가지" type="Node2D" parent="."]
+script = ExtResource("2")
+factor = 1.15
+z_index = 55
+
+[node name="늘어진가지_1" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(87, -16)
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("24")
+centered = false
+offset = Vector2(-282, 0)
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_2" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(1093, -16)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("26")
+centered = false
+offset = Vector2(-122, 0)
+flip_h = true
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_3" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(1648, -16)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("27")
+centered = false
+offset = Vector2(-128, 0)
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_4" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(3034, -16)
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("26")
+centered = false
+offset = Vector2(-122, 0)
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_5" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(3693, -16)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("26")
+centered = false
+offset = Vector2(-122, 0)
+flip_h = true
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_6" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(4480, -16)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("26")
+centered = false
+offset = Vector2(-122, 0)
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_7" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(5465, -16)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("26")
+centered = false
+offset = Vector2(-122, 0)
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_8" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(6517, -16)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("24")
+centered = false
+offset = Vector2(-282, 0)
+flip_h = true
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_9" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(6993, -16)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("24")
+centered = false
+offset = Vector2(-282, 0)
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_10" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(8380, -16)
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("24")
+centered = false
+offset = Vector2(-282, 0)
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
+
+[node name="늘어진가지_11" type="Sprite2D" parent="늘어진가지"]
+position = Vector2(9332, -16)
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("27")
+centered = false
+offset = Vector2(-128, 0)
+modulate = Color(0.42, 0.36, 0.42, 1)
+material = ExtResource("25")
